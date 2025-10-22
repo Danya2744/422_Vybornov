@@ -92,6 +92,9 @@
     <Compile Include="Pages\CategoryTabPage.xaml.cs">
       <DependentUpon>CategoryTabPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PaymentTabPage.xaml.cs">
+      <DependentUpon>PaymentTabPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RegPage.xaml.cs">
       <DependentUpon>RegPage.xaml</DependentUpon>
     </Compile>
@@ -153,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\CategoryTabPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PaymentTabPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
