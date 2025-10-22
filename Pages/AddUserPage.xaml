@@ -4,11 +4,89 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:_422_Vybornov.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddUserPage">
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="AddUserPage" Height="469">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Логин"
+                  Grid.Row="0"
+                  Grid.Column="0"
+                  Margin="18,14,592,51"
+                  FontSize="20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Пароль"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Margin="18,14,592,50"
+                  FontSize="20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Роль"
+                  Grid.Row="2"
+                  Grid.Column="0"
+                  Margin="18,14,592,50"
+                  FontSize="20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <TextBlock Text="ФИО"
+                  Grid.Row="3"
+                  Grid.Column="0"
+                  Margin="18,14,592,50"
+                  FontSize="20" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Фото (необязательно)" Grid.Row="4"
+                  Grid.Column="0"
+                  Margin="18,14,552,51" FontSize="20" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+        <TextBox x:Name="TBLogin"
+                Text="{Binding Login}" Grid.Row="0"
+                ToolTip="Введите логин" Grid.Column="1"
+                Margin="156,5,71,5"/>
+        <TextBox x:Name="TBPass"
+                Text="{Binding Password}" Grid.Column="1"
+                ToolTip="Введите пароль" Margin="156,5,71,5"
+                Grid.Row="1"/>
+        <ComboBox Name="cmbRole" SelectedItem="{Binding Role}" ToolTip="Выберите роль" Grid.Row="2"
+                Grid.Column="1"
+                Margin="156,5,71,5">
+            <ComboBoxItem Content="Admin"/>
+            <ComboBoxItem Content="User"/>
+        </ComboBox>
+        <TextBox x:Name="TBFio"
+                Text="{Binding FIO}"
+                Grid.Row="3"
+                ToolTip="Введите ФИО"
+                Grid.Column="1"
+                Margin="156,5,71,5"/>
+        <TextBox x:Name="TBPhoto"
+                Text="{Binding Photo}"
+                Grid.Row="4"
+                ToolTip="Добавьте фото"
+                Grid.Column="1"
+                Margin="156,5,71,4"/>
+
+        <Button x:Name="ButtonSave"
+                Content="Сохранить"
+                Grid.Row="6"
+                Click="ButtonSave_Click"
+                Margin="0,10,50,19"
+                HorizontalAlignment="Right"
+                Width="100" Height="NaN" Grid.Column="1"/>
+
+        <Button x:Name="ButtonClean"
+                Content="Очистить"
+                Grid.Row="6"
+                Click="ButtonClean_Click"
+                Margin="0,10,0,19"
+                HorizontalAlignment="Center"
+                Width="100" Height="NaN"/>
     </Grid>
 </Page>
