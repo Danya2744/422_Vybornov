@@ -1,0 +1,30 @@
+﻿<Window x:Class="_422_Vybornov.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_422_Vybornov"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <Button x:Name="Back" Content="Назад" Margin="10,5,0,5" HorizontalAlignment="Left"  Click="Back_Click" Width="79"/>
+        </Border>
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Border Grid.Row="2">
+            <TextBlock x:Name="DateTimeNow" HorizontalAlignment="Left" Margin="522,0,0,0" Grid.Row="2" VerticalAlignment="Center"  Height="35" Width="194" Grid.Column="1"/>
+        </Border>
+        <TextBlock HorizontalAlignment="Left" Margin="551,0,0,0" TextWrapping="Wrap" Text="Выбор темы:" VerticalAlignment="Center"/>
+        <ComboBox x:Name="Themes" HorizontalAlignment="Left" Margin="635,0,0,0" VerticalAlignment="Center" Width="120" SelectionChanged="Themes_SelectionChanged">
+            <ComboBoxItem Content="Классика" Tag="Dictionary.xaml"/>
+            <ComboBoxItem Content="Другой стиль" Tag="MyDictionary.xaml"/>
+        </ComboBox>
+    </Grid>
+</Window>
