@@ -166,7 +166,7 @@ namespace _422_Vybornov.Pages
         }
         private void ButtonChangePassword_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationService?.Navigate(new ChangePassPage());
+            NavigationService?.Navigate(new ChangePassPage());
         }
         private void txtHintLogin_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
