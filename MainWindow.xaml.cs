@@ -22,6 +22,12 @@ namespace _422_Vybornov
         {
             InitializeComponent();
             MainFrame.Navigate(new AuthPage());
+            MainFrame.Navigated += MainFrame_Navigated;
+        }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            Back.IsEnabled = MainFrame.CanGoBack;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -34,7 +40,10 @@ namespace _422_Vybornov
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-
+            if (MainFrame.CanGoBack)
+            {
+                MainFrame.GoBack();
+            }
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

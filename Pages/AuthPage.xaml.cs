@@ -159,6 +159,13 @@ namespace _422_Vybornov.Pages
             }
         }
 
+        private void TextBoxLogin_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+        }
 
         private void ButtonReg_Click(object sender, RoutedEventArgs e)
         {
