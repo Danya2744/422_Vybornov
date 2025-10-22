@@ -90,5 +90,56 @@
                      VerticalAlignment="Bottom" 
                      Grid.Column="1" 
                      PasswordChanged="PasswordBox_PasswordChanged"  />
+        <TextBox Grid.Column="1"
+             CommandManager.PreviewExecuted="textBox_PreviewExecuted" 
+             ContextMenu="{x:Null}"
+             Visibility="Hidden"
+             x:Name="captcha"
+             Height="42"
+             Foreground="Red"
+             FontStyle="Italic"
+             FontWeight="Heavy"
+             VerticalAlignment="Top"
+             Width="156"
+             Background="{x:Null}"
+             FontStretch="UltraCondensed"
+             IsReadOnly="True"
+             HorizontalContentAlignment="Center"
+             HorizontalAlignment="Right"
+             Margin="0,96,322,0"
+             VerticalContentAlignment="Center"
+             FontSize="20" />
+
+        <TextBox Grid.Column="1"
+             Visibility="Hidden"
+             x:Name="captchaInput"
+             HorizontalAlignment="Left" 
+             Height="34"
+             Margin="49,183,0,0"
+             TextWrapping="Wrap"
+             Text=""
+             VerticalAlignment="Top" 
+             Width="160" />
+        
+        <Button x:Name="submitCaptcha" 
+            Margin="234,183,0,0"
+            Visibility="Hidden"
+            Height="34"
+            Content="Подтвердить"
+            ToolTip="Подтвердить ввод капчи" 
+            Grid.Row="1"
+            HorizontalAlignment="Left" 
+            Width="120"
+            VerticalAlignment="Top"
+            Grid.Column="1"
+            Click="submitCaptcha_Click" />
+
+       <Label Content="Капча:"
+           x:Name="labelCaptcha"
+           Margin="205,183,0,0"
+           Visibility="Hidden"
+           HorizontalAlignment="Left"
+           Width="54" 
+           Grid.Row="0" />
     </Grid>
 </Page>
