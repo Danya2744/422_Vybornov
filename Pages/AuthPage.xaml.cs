@@ -34,7 +34,7 @@ namespace _422_Vybornov.Pages
                 return;
             }
 
-            string hashedPassword = GetHash(PasswordBox.Password); 
+            string hashedPassword = GetHash(PasswordBox.Password);
 
             using (var db = new Vybornov_DB_PaymentEntities1())
             {
@@ -62,14 +62,14 @@ namespace _422_Vybornov.Pages
                     MessageBox.Show("Пользователь успешно найден!");
                     currentUser = user;
 
-                    switch (user.Role)
+                    switch (user.Role.ToLower())
                     {
-                        //case "user":
-                        //    NavigationService?.Navigate(new UserPage());
-                        //    break;
-                        //case "admin":
-                        //    NavigationService?.Navigate(new AdminPage());
-                        //    break;
+                        case "user":
+                            NavigationService?.Navigate(new UserPage());
+                            break;
+                        case "admin":
+                            NavigationService?.Navigate(new AdminPage());
+                            break;
                         default:
                             MessageBox.Show("Неизвестная роль пользователя");
                             break;
