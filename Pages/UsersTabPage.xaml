@@ -1,0 +1,39 @@
+﻿<Page x:Class="_422_Vybornov.Pages.UsersTabPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:_422_Vybornov.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UsersTabPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="377*"/>
+            <RowDefinition Height="73*"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="0" x:Name="DataGridUser"
+                  AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Login}" Width="50"/>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding Password}" Width="70"/>
+                <DataGridTextColumn Header="Роль" Binding="{Binding Role}" Width="80"/>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}" Width="200"/>
+                <DataGridTextColumn Header="Фото" Binding="{Binding Photo}" Width="50"/>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="ButtonEdit" Content="Редактировать" ToolTip="Редактировать данные"
+                                    Click="ButtonEdit_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Grid.Row="1" x:Name="ButtonAdd" ToolTip="Добавить данные" Content="Добавить" HorizontalAlignment="Left" Click="ButtonAdd_Click"/>
+        <Button Grid.Row="1" x:Name="ButtonDel" ToolTip="Удалить данные" Content="Удалить" HorizontalAlignment="Right" Click="ButtonDel_Click"/>
+    </Grid>
+</Page>
