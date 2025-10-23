@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_422_Vybornov"
         mc:Ignorable="d"
-        Title="MainWindow" Height="580" Width="900"
+        Title="MainWindow" Height="630" Width="900"
         Loaded="Window_Loaded"
         Closing="Window_Closing">
     <Grid>
