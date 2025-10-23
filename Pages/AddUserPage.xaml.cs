@@ -151,7 +151,6 @@ namespace _422_Vybornov.Pages
             if (string.IsNullOrWhiteSpace(_currentUser.FIO))
                 errors.AppendLine("Укажите ФИО");
 
-            // Проверка пароля как в RegPage
             if (!string.IsNullOrEmpty(TBPass.Text))
             {
                 if (TBPass.Text.Length >= 6)
@@ -189,7 +188,6 @@ namespace _422_Vybornov.Pages
                 return;
             }
 
-            // Проверка на уникальность логина только для новых пользователей
             if (_currentUser.ID == 0)
             {
                 using (var db = new Vybornov_DB_PaymentEntities1())
@@ -206,13 +204,10 @@ namespace _422_Vybornov.Pages
                 }
             }
 
-            // Хеширование пароля
             if (!string.IsNullOrEmpty(TBPass.Text))
             {
                 _currentUser.Password = GetHash(TBPass.Text);
             }
-
-            // Сохраняем путь к изображению
             _currentUser.Photo = _selectedImagePath;
 
             if (_currentUser.ID == 0)
