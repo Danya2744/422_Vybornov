@@ -31,6 +31,8 @@ namespace _422_Vybornov.Pages
 
             if (selectedPayment != null)
                 _currentPayment = selectedPayment;
+            else
+                _currentPayment.Date = DateTime.Today; 
 
             DataContext = _currentPayment;
         }
@@ -39,20 +41,25 @@ namespace _422_Vybornov.Pages
         {
             StringBuilder errors = new StringBuilder();
 
-            if (string.IsNullOrWhiteSpace(_currentPayment.Date.ToString()))
+            if (DPDate.SelectedDate == null)
                 errors.AppendLine("Укажите дату!");
+            else
+                _currentPayment.Date = DPDate.SelectedDate.Value;
 
-            if (string.IsNullOrWhiteSpace(_currentPayment.Num.ToString()))
-                errors.AppendLine("Укажите количество!");
+            if (string.IsNullOrWhiteSpace(_currentPayment.Num.ToString()) || _currentPayment.Num <= 0)
+                errors.AppendLine("Укажите корректное количество!");
 
-            if (string.IsNullOrWhiteSpace(_currentPayment.Price.ToString()))
-                errors.AppendLine("Укажите цену");
+            if (string.IsNullOrWhiteSpace(_currentPayment.Price.ToString()) || _currentPayment.Price <= 0)
+                errors.AppendLine("Укажите корректную цену");
 
             if (string.IsNullOrWhiteSpace(_currentPayment.UserID.ToString()))
                 errors.AppendLine("Укажите клиента!");
 
             if (string.IsNullOrWhiteSpace(_currentPayment.CategoryID.ToString()))
                 errors.AppendLine("Укажите категорию!");
+
+            if (string.IsNullOrWhiteSpace(_currentPayment.Name))
+                errors.AppendLine("Укажите название платежа!");
 
             if (errors.Length > 0)
             {
@@ -80,7 +87,7 @@ namespace _422_Vybornov.Pages
             TBPaymentName.Text = "";
             TBAmount.Text = "";
             TBCount.Text = "";
-            TBDate.Text = "";
+            DPDate.SelectedDate = DateTime.Today; 
             CBCategory.SelectedIndex = -1;
             CBUser.SelectedIndex = -1;
         }
