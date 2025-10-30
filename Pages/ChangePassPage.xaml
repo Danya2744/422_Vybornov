@@ -22,16 +22,16 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Text="Логин" Grid.Row="0" Grid.Column="0" Margin="10" FontSize="16" VerticalAlignment="Center"/>
-        <TextBox x:Name="TbLogin" Grid.Row="0" Grid.Column="1" Margin="10" Height="30" VerticalAlignment="Center"/>
+        <TextBox x:Name="TbLogin" Grid.Column="1" Margin="10,0,60,0" Height="30" VerticalAlignment="Center"/>
 
         <TextBlock Text="Текущий пароль" Grid.Row="1" Grid.Column="0" Margin="10" FontSize="16" VerticalAlignment="Center"/>
-        <PasswordBox x:Name="CurrentPasswordBox" Grid.Row="1" Grid.Column="1" Margin="10" Height="30" VerticalAlignment="Center"/>
+        <PasswordBox x:Name="CurrentPasswordBox" Grid.Row="1" Grid.Column="1" Margin="10,0,60,0" Height="30" VerticalAlignment="Center"/>
 
         <TextBlock Text="Новый пароль" Grid.Row="2" Grid.Column="0" Margin="10" FontSize="16" VerticalAlignment="Center"/>
-        <PasswordBox x:Name="NewPasswordBox" Grid.Row="2" Grid.Column="1" Margin="10" Height="30" VerticalAlignment="Center"/>
+        <PasswordBox x:Name="NewPasswordBox" Grid.Row="2" Grid.Column="1" Margin="10,0,60,0" Height="30" VerticalAlignment="Center"/>
 
         <TextBlock Text="Подтвердите пароль" Grid.Row="3" Grid.Column="0" Margin="10" FontSize="16" VerticalAlignment="Center"/>
-        <PasswordBox x:Name="ConfirmPasswordBox" Grid.Row="3" Grid.Column="1" Margin="10" Height="30" VerticalAlignment="Center"/>
+        <PasswordBox x:Name="ConfirmPasswordBox" Grid.Row="3" Grid.Column="1" Margin="10,0,60,0" Height="30" VerticalAlignment="Center"/>
 
         <Button x:Name="BtnSave" Content="Сохранить" Grid.Row="4" Grid.ColumnSpan="2" 
                 Margin="10" Height="35" Width="120" HorizontalAlignment="Center"

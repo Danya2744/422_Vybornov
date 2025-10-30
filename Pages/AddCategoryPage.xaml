@@ -13,7 +13,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Название категории" Grid.Row="0" FontSize="20" Margin="55,91,444,103" RenderTransformOrigin="0.258,2.273"/>
+        <TextBlock Text="Название категории" Grid.Row="0" FontSize="20" Margin="55,95,444,99" RenderTransformOrigin="0.258,2.273"/>
         <TextBox x:Name="TBCategoryName" Grid.Row="0"
                 Margin="400,94,164,103"
                 Text="{Binding Name}"
