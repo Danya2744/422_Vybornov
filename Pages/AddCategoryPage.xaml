@@ -16,7 +16,8 @@
         <TextBlock Text="Название категории" Grid.Row="0" FontSize="20" Margin="55,91,444,103" RenderTransformOrigin="0.258,2.273"/>
         <TextBox x:Name="TBCategoryName" Grid.Row="0"
                 Margin="400,94,164,103"
-                Text="{Binding Name}"/>
+                Text="{Binding Name}"
+                ToolTip="Введите название категории"/>
 
         <Button x:Name="ButtonSaveCategory" Content="Сохранить" Grid.Row="1" Click="ButtonSaveCategory_Click" Margin="249,81,249,104" Height="NaN"/>
         <Button x:Name="ButtonClean" Content="Очистить" Grid.Row="1" Click="ButtonClean_Click" Margin="249,143,249,44" Height="NaN"/>

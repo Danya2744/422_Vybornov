@@ -19,12 +19,15 @@
         <TextBox x:Name="TBPaymentName"
                 Grid.Row="0"
                 Margin="400,26,48,95"
-                Text="{Binding Name}"/>
+                Text="{Binding Name}"
+                ToolTip="Введите название платежа"/>
 
         <TextBlock Text="Сумма" FontSize="18" Margin="17,78,615,41"/>
         <TextBox x:Name="TBAmount"
                 Margin="400,75,48,45"
-                Text="{Binding Price}"/>
+                Text="{Binding Price}"
+                PreviewTextInput="TBCount_PreviewTextInput"
+                ToolTip="Введите сумму"/>
 
         <Button x:Name="ButtonSave" Content="Сохранить" Grid.Row="2" Click="ButtonSave_Click" Margin="11,95,447,12" Height="NaN"/>
         <Button x:Name="ButtonClean" Content="Очистить" Grid.Row="2" Click="ButtonClean_Click" Margin="448,95,10,12" Height="NaN"/>
@@ -33,7 +36,9 @@
         <TextBox x:Name="TBCount"
                 Grid.Row="1"
                 Margin="400,10,48,109"
-                Text="{Binding Num}"/>
+                Text="{Binding Num}"
+                PreviewTextInput="TBCount_PreviewTextInput"
+                ToolTip="Введите количество"/>
 
         <TextBlock Grid.Row="1" FontSize="18" Margin="24,66,621,53"><Run Language="ru-ru" Text="Дата"/></TextBlock>
         <DatePicker x:Name="DPDate" 
@@ -41,16 +46,17 @@
                    Margin="400,62,48,57" 
                    SelectedDate="{Binding Date}"
                    HorizontalAlignment="Left" 
-                   Width="200"/>
+                   Width="200"
+                   ToolTip="Выберите дату"/>
 
         <ComboBox x:Name="CBUser" Grid.Row="1" Margin="400,109,48,10" SelectedValuePath="ID"
-                SelectedValue="{Binding Path=UserID}" DisplayMemberPath="FIO"/>
+                SelectedValue="{Binding Path=UserID}" DisplayMemberPath="FIO" ToolTip="Выберите клиента"/>
 
         <ComboBox x:Name="CBCategory"
                 Grid.Row="2"
                 Margin="400,10,48,109"
                 SelectedValuePath="ID"
-                SelectedValue="{Binding Path=CategoryID}" DisplayMemberPath="Name"/>
+                SelectedValue="{Binding Path=CategoryID}" DisplayMemberPath="Name" ToolTip="Выберите категорию"/>
 
         <TextBlock Grid.Row="1" FontSize="18" Margin="24,113,621,6"><Run Text="ID"/><Run Language="ru-ru" Text=" клиента"/></TextBlock>
         <TextBlock Grid.Row="2" FontSize="18" Margin="24,14,622,105"><Run Text="ID"/><Run Language="ru-ru" Text=" категории"/></TextBlock>

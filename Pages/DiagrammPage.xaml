@@ -17,11 +17,11 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
             <TextBlock Text="Пользователь:" VerticalAlignment="Center" Margin="5"/>
             <ComboBox x:Name="CmbUser" DisplayMemberPath="FIO" Width="200" Margin="5" 
-                     SelectionChanged="UpdateChart"/>
+                     SelectionChanged="UpdateChart" ToolTip="Выберите пользователя"/>
 
             <TextBlock Text="Тип диаграммы:" VerticalAlignment="Center" Margin="5"/>
             <ComboBox x:Name="CmbDiagram" Width="150" Margin="5" 
-                     SelectionChanged="UpdateChart"/>
+                     SelectionChanged="UpdateChart" ToolTip="Выберите тип диаграммы"/>
 
             <Button x:Name="BtnExportExcel" Content="Экспорт в Excel" 
                    Click="BtnExportExcel_Click" Margin="5" Padding="10,5"/>

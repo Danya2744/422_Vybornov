@@ -82,6 +82,11 @@ namespace _422_Vybornov.Pages
             }
         }
 
+        private void TBCount_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.Text, 0);
+        }
+
         private void ButtonClean_Click(object sender, RoutedEventArgs e)
         {
             TBPaymentName.Text = "";

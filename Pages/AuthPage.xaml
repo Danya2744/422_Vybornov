@@ -40,7 +40,7 @@
                  Background="White" 
                  Margin="36,0,0,69" 
                  TextWrapping="Wrap" 
-                 ToolTip="Введите логин или почту" 
+                 ToolTip="Введите логин" 
                  TextChanged="TextBoxLogin_TextChanged"
                  Height="34" 
                  VerticalAlignment="Bottom" 
