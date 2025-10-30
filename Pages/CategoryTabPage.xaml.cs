@@ -42,21 +42,76 @@ namespace _422_Vybornov.Pages
 
         private void ButtonDel_Click(object sender, RoutedEventArgs e)
         {
-            var categoryForRemoving = DataGridCategory.SelectedItems.Cast<Category>().ToList();
+            var categoriesForRemoving = DataGridCategory.SelectedItems.Cast<Category>().ToList();
 
-            if (MessageBox.Show($"Вы точно хотите удалить записи в количестве {categoryForRemoving.Count()} элементов?", "Внимание",
-                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (categoriesForRemoving.Count == 0)
+            {
+                MessageBox.Show("Выберите категории для удаления!", "Внимание",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            var categoriesWithPayments = new List<Category>();
+            foreach (var category in categoriesForRemoving)
+            {
+                var hasPayments = Vybornov_DB_PaymentEntities1.GetContext().Payment.Any(p => p.CategoryID == category.ID);
+                if (hasPayments)
+                {
+                    categoriesWithPayments.Add(category);
+                }
+            }
+
+            string message;
+            if (categoriesWithPayments.Any())
+            {
+                message = $"Вы точно хотите удалить {categoriesForRemoving.Count} категорий?\n" +
+                         $"Внимание: {categoriesWithPayments.Count} категорий имеют связанные платежи, " +
+                         $"которые также будут удалены!";
+            }
+            else
+            {
+                message = $"Вы точно хотите удалить {categoriesForRemoving.Count} категорий?";
+            }
+
+            if (MessageBox.Show(message, "Внимание",
+                MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 try
                 {
-                    Vybornov_DB_PaymentEntities1.GetContext().Category.RemoveRange(categoryForRemoving);
-                    Vybornov_DB_PaymentEntities1.GetContext().SaveChanges();
-                    MessageBox.Show("Данные успешно удалены!");
+                    using (var context = new Vybornov_DB_PaymentEntities1())
+                    {
+                        foreach (var category in categoriesForRemoving)
+                        {
+                            var categoryWithPayments = context.Category
+                                .Include("Payment") 
+                                .FirstOrDefault(c => c.ID == category.ID);
+
+                            if (categoryWithPayments != null)
+                            {
+                                if (categoryWithPayments.Payment != null && categoryWithPayments.Payment.Any())
+                                {
+                                    context.Payment.RemoveRange(categoryWithPayments.Payment);
+                                }
+
+                                context.Category.Remove(categoryWithPayments);
+                            }
+                        }
+
+                        context.SaveChanges();
+                    }
+
+                    MessageBox.Show("Данные успешно удалены!", "Успех",
+                        MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    Vybornov_DB_PaymentEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(x => x.Reload());
                     DataGridCategory.ItemsSource = Vybornov_DB_PaymentEntities1.GetContext().Category.ToList();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message.ToString());
+                    MessageBox.Show($"Ошибка при удалении: {ex.Message}\n\n" +
+                                   "Если ошибка связана с внешними ключами, " +
+                                   "убедитесь, что в базе данных настроено каскадное удаление.",
+                                   "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
