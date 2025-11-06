@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 
 namespace _422_Vybornov.Pages
 {
+    /// <summary>
+    /// Логика взаимодействия для главной страницы администратора
+    /// </summary>
     public partial class AdminPage : Page
     {
         public AdminPage()

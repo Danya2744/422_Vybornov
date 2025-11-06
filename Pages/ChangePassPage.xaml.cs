@@ -16,6 +16,9 @@ using System.Windows.Shapes;
 
 namespace _422_Vybornov.Pages
 {
+    /// <summary>
+    /// Логика взаимодействия для страницы смены пароля
+    /// </summary>
     public partial class ChangePassPage : Page
     {
         public ChangePassPage()

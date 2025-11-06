@@ -9,6 +9,9 @@ using System.IO;
 
 namespace _422_Vybornov.Pages
 {
+    /// <summary>
+    /// Логика взаимодействия для страницы с диаграммами и выгрузкой данных
+    /// </summary>
     public partial class DiagrammPage : Page
     {
         private Vybornov_DB_PaymentEntities1 _context = new Vybornov_DB_PaymentEntities1();

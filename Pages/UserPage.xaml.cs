@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 
 namespace _422_Vybornov.Pages
 {
+    /// <summary>
+    /// Логика взаимодействия для главной страницы пользователя
+    /// </summary>
     public partial class UserPage : Page
     {
         public UserPage()

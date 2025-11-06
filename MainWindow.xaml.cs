@@ -16,6 +16,9 @@ using System.Windows.Shapes;
 
 namespace _422_Vybornov
 {
+    /// <summary>
+    /// Логика взаимодействия для основного окна MainWindow.xaml
+    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()

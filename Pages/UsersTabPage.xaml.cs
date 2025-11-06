@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 
 namespace _422_Vybornov.Pages
 {
+    /// <summary>
+    /// Логика взаимодействия для страницы отображения всех пользователей
+    /// </summary>
     public partial class UsersTabPage : Page
     {
         public UsersTabPage()

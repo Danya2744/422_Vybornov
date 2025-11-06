@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 
 namespace _422_Vybornov.Pages
 {
+    /// <summary>
+    /// Логика взаимодействия для страницы добавления новых платежей
+    /// </summary>
     public partial class AddPaymentPage : Page
     {
         private Payment _currentPayment = new Payment();

@@ -8,6 +8,9 @@ using System.Windows.Input;
 
 namespace _422_Vybornov.Pages
 {
+    /// <summary>
+    /// Логика взаимодействия для страницы авторизации
+    /// </summary>
     public partial class AuthPage : Page
     {
         private int failedAttempts = 0;

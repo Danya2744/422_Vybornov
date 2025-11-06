@@ -16,6 +16,9 @@ using System.Security.Cryptography;
 
 namespace _422_Vybornov.Pages
 {
+    /// <summary>
+    /// Логика взаимодействия для страницы регистрации
+    /// </summary>
     public partial class RegPage : Page
     {
         public RegPage()

@@ -18,6 +18,9 @@ using System.Security.Cryptography;
 
 namespace _422_Vybornov.Pages
 {
+    /// <summary>
+    /// Логика взаимодействия для страницы добавления новых пользователей 
+    /// </summary>
     public partial class AddUserPage : Page
     {
         private User _currentUser = new User();

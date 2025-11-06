@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 
 namespace _422_Vybornov.Pages
 {
+    /// <summary>
+    /// Логика взаимодействия для страницы с платежами
+    /// </summary>
     public partial class PaymentTabPage : Page
     {
         public PaymentTabPage()

@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace _422_Vybornov.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для CategoryTabPage.xaml
+    /// Логика взаимодействия для страницы с категориями
     /// </summary>
     public partial class CategoryTabPage : Page
     {

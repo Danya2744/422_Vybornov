@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 
 namespace _422_Vybornov.Pages
 {
+    /// <summary>
+    /// Логика взаимодействия для страницы добавления новых категорий
+    /// </summary>
     public partial class AddCategoryPage : Page
     {
         private Category _currentCategory = new Category();
